@@ -14,3 +14,8 @@ flask run
 ```
 
 Open in browser: http://localhost:5000
+
+
+<h3> Help </h3>
+How to render dynamic tables in flask - Tutorial:
+https://www.youtube.com/watch?v=mCy52I4exTU
