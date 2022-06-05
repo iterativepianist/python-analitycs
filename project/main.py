@@ -24,11 +24,11 @@ def data():
     #if not hasattr(current_user, "name"):
     #    return render_template('index.html')
 
-    headings = ("Średnia", "Mediana")
-    data = (
-        ("150", "250"),
-        ("350", "350")
-    )
+    headings = ["Średnia", "Mediana"]
+    data = [
+        ["150", "250"],
+        ["350", "350"]
+    ]
 
 
     return render_template('data.html', headings = headings, data = data)
