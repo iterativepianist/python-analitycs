@@ -1,10 +1,6 @@
 
 <h2>Requirements</h2>
-[ubuntu] (version 18, 20, 22 or later)
-[docker] (version 20.10.9+)
-[docker-compose] (version 1.28.5 to support Compose file version 3.8)
-
-https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
+python3, pip3 & installed packages (flask and others)
 
 <h2>How to run</h2>
 ```bash
@@ -19,3 +15,6 @@ Open in browser: http://localhost:5000
 <h3> Help </h3>
 How to render dynamic tables in flask - Tutorial:
 https://www.youtube.com/watch?v=mCy52I4exTU
+
+How this project was built:
+https://www.digitalocean.com/community/tutorials/how-to-add-authentication-to-your-app-with-flask-login
