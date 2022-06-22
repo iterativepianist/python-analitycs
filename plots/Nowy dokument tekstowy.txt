@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+
+import numpy as np 
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import os
+
+df = pd.read_csv("googleplaystore.csv")
+
+# preprocessing
+
+df.columns = [col.replace(' ', '_')  for col in df.columns ]
+df = df.drop(10472)
+df = df.reset_index()
+
+df.Reviews = pd.to_numeric(df.Reviews)
+
+# draw plot
+
+plt.figure(figsize= (15, 10));
+df.Rating.plot(kind="hist", bins=30, color='c')
+plt.title("Rating Histogram");
+plt.xlabel("Rating");
+plt.ylabel("Number of ratings");
+plt.xlim(right=6)
+plt.plot();
+
+
+
+plt.figure(figsize=(15,10))
+df.Category.value_counts().plot(kind="bar", rot=0, title="Pclass Vs Count", color='c', );
+plt.xticks(rotation='vertical');
+plt.title("The number of applications in a given category")
+plt.xlabel("Category Name")
+plt.ylabel("Number of applications")
+plt.plot();
+
+plt.figure(figsize=(15,10))
+df.groupby(["Category"]).Rating.mean().plot(kind="bar", rot=0, title="Pclass Vs Count");
+plt.xticks(rotation='vertical');
+plt.xlabel("Category Name")
+plt.ylabel("Avg. Rating")
+plt.title("Average app ratings for the category")
+plt.plot();
+
+
+plt.figure(figsize=(15, 10));
+df.Type.value_counts().plot(kind="bar");
+plt.xlabel("License Type");
+plt.ylabel("Number of applications")
+plt.title("Types of licenses")
+plt.plot();
+
+
+plt.figure(figsize=(15, 10), dpi=100, );
+df["Content_Rating"].value_counts().plot(kind="bar");
+plt.title("Number of applications for each age category");
+plt.xlabel("Age category");
+plt.ylabel("Number of applications");
+plt.ylim(bottom=-10);
+plt.plot();
+
+
+plt.figure(figsize=(15, 10));
+plt.xlabel("Anroid Version");
+plt.ylabel("Total Apps");
+plt.title("Android Version Vs Total Apps");
+df["Android_Ver"].value_counts().plot(kind="bar");
+plt.plot();
+
+
+plt.figure(figsize=(15, 10));
+df["Genres"].value_counts().head(10).plot(kind="bar");
+plt.title("Top 10 Genres");
+plt.xlabel("Genres");
+plt.ylabel("Number of applications");
+plt.plot();
+
+
+df.Reviews = df.Reviews.astype("float") 
+df_new = df.groupby(["Genres", "Category"], as_index=False).sum()[["Genres", "Category", "Reviews"]].sort_values(by="Reviews", ascending=False).head(10)
+
+
+plt.figure(figsize=(15, 10));
+plt.title("Top 10 Most Reviewed Genres");
+df_new.groupby("Genres").Reviews.sum().sort_values(ascending=False).plot(kind='pie');
+plt.plot();
+
+
