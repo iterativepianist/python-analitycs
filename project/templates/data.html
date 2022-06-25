@@ -1,26 +1,154 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1 class="title">
-  Tutaj wchodzi kontent tabela i analiza
-</h1>
+<h1 class="title">Analiza danych pochodzących ze sklepu Google Play</h1>
+<hr />
+<br />
 <body>
- <table>
-    <tr>
-        {% for header in headings  %}
-        <th>{{ header }}</th>
-        {% endfor %}
-    </tr>
-
-    {% for row in data %}
-    <tr>
-        {% for cell in row %}
-            <td>{{cell}}</td>
-        {% endfor %}
-    </tr>
-    {% endfor %}
-
- </table>
+<div class="columns">
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Rating Histogram</h2>
+                 <h3 class="subtitle is-header is-5 is-spaced">Oceny aplikacji w stosunku do ilości wystawionych ocen</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (0).png" align="center" alt="Rating Histogram">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">The number of application in a given category</h2>
+                  <h3 class="subtitle is-header is-5 is-spaced">Liczba pobranych aplikacji z podziałem na kategorie </h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (1).png" align="center" alt="The number of application in a given category">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Average app ratings for the category</h2>
+                 <h3 class="subtitle is-header is-5 is-spaced">Średnie oceny pobranych aplikacji według kategorii</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (2).png" align="center" alt="Average app ratings for the category">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Types of licences</h2>
+                  <h3 class="subtitle is-header is-5 is-spaced">Rodzaje licencji pobranych aplikacji</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (3).png" align="center" alt="Types of licences">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="columns">
+        <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Number of applicatons for each age category</h2>
+                 <h3 class="subtitle is-header is-5 is-spaced">Liczba pobieranych aplikacji w zależności od wieku użytkownika</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (4).png" align="center" alt="Number of applicatons for each age category">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Android version vs total app</h2>
+                  <h3 class="subtitle is-header is-5 is-spaced">Wersja systemu Android w porównaniu do wszystkich pobranych aplikacji</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (5).png" align="center" alt="Android version vs total app">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+</div>
+<div class="columns">
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Top 10 Genres</h2>
+                 <h3 class="subtitle is-header is-5 is-spaced">10 najczęściej pobieranych rodzajów aplikacji</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (6).png" align="center" alt="Top 10 Genres">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+    <div class="column is-half">
+         <div class="box">
+             <div class="is-box-div">
+                 <h2 class="title is-header is-spaced">Top 10 Most Reviewed Genres</h2>
+                  <h3 class="subtitle is-header is-5 is-spaced">Top 10 najczęściej ocenianych rodzajów aplikacji</h3>
+                 <hr />
+             </div>
+             <br />
+             <div class="media">
+                 <div class="media-content">
+                    <figure class="image is-3by2">
+                      <img src="static/images/Figure 2022-06-22 191443 (7).png" align="center" alt="Top 10 Most Reviewed Genres">
+                    </figure>
+                 </div>
+              </div>
+        </div>
+    </div>
+</div>
 </body>
 
 {% endblock %}
