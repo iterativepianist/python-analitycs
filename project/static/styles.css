@@ -6,3 +6,12 @@ th, td {
   padding: 15px;
 
 }
+
+.is-header{
+  color: darksalmon !important;
+  text-align: center;
+}
+
+.is-box-div{
+  height: 150px;
+}
