@@ -1,0 +1,5 @@
+Https:
+https://github.com/iterativepianist/python-analitycs.git
+
+SSH:
+git@github.com:iterativepianist/python-analitycs.git
